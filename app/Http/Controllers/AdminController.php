@@ -65,7 +65,7 @@ class AdminController extends Controller
                                     ->join('categories', 'products.id', '=', 'categories.product_id')
                                     ->paginate(5)
                                     ->withQueryString(),
-            'category' => Category::all()
+            'category' => Category::select('name')->groupBy('name')->get()
         ]);
     }
 
@@ -83,7 +83,12 @@ class AdminController extends Controller
             $request->validate(
                 [
                     'image' => [ 'required', 'array' ],            
-                    'image.*' => [ 'image' ]
+                    'image.*' => [ 'image' ],
+                    'uname' => [ 'required' ],
+                    'email' => [ 'required', 'email' ]
+                ],
+                [
+                    'uname.required' => 'The name field is required'
                 ]
             );
         } else if ($request->productDetails == 3){
@@ -127,10 +132,8 @@ class AdminController extends Controller
         $products->date_time = $request->date_time;
         $products->save();
 
-        $categories = category::find($products->id);
-
-        $categories->name = $request->category;
-        $categories->save();
+        category::where('product_id', $products->id)
+        ->update(['name' => $request->category]);
 
     }
 
