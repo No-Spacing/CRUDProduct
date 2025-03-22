@@ -10,6 +10,7 @@
  * V-Stepper with backend validations
  * Search and Category Filter
  * Apex charts and graphs inside the dashboard page
+ * Pagination
  * Mysql database relation.
 ## Installation
  1. open command prompt inside the app project folder and type command `composer update`.
