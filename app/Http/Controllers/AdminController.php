@@ -120,26 +120,24 @@ class AdminController extends Controller
             'date_time' => 'required'
         ]);
 
-        DB::table('products')
-        ->where('id', $request->id)
-        ->update([
-            'name' => $request->name,
-            'category' => $request->category,
-            'description' => $request->description,
-            'date_time' => $request->date_time,
-        ]);
+        $products = Product::find($request->id);
+
+        $products->name = $request->name;
+        $products->description = $request->description;
+        $products->date_time = $request->date_time;
+        $products->save();
+
+        $categories = category::find($products->id);
+
+        $categories->name = $request->category;
+        $categories->save();
 
     }
 
     public function DeleteProduct ($id) {
+        DB::table('categories')->where('product_id', $id)->delete();
         DB::table('products')->where('id', $id)->delete();
     }
-
-    public function VideoPlayer($id){
-        $videoFile = DB::table('video_tables')->where('id', $id)->first();
-        return Inertia::render('Videos', ['videoFile' => $videoFile]);
-    }
-
 
     public function logout (Request $request) {
         Auth::guard('admin')->logout();
