@@ -86,7 +86,7 @@ console.log(props.category)
            <v-container fluid>
                 <v-card-text>
                     <div class="container">
-                        <v-btn color="success" href="/create-product" class="mb-5" prepend-icon="mdi-plus-circle">Create</v-btn>
+                        <v-btn color="success" href="/create" class="mb-5" prepend-icon="mdi-plus-circle">Create</v-btn>
                         <v-row class="justify-space-between">
                             <v-col cols="12" md="5" sm="6">
                                 <v-text-field

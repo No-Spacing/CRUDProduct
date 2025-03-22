@@ -22,7 +22,7 @@ Route::middleware(['admin'])->group(function () {
      
     Route::get('/products', [AdminController::class, 'Products']);
     
-    Route::inertia('/create-product', 'CreateProduct');
+    Route::inertia('/create', 'Create');
     Route::post('/post-product', [AdminController::class, 'PostProduct']);
 
     Route::delete('/delete-product/{id}', [AdminController::class, 'DeleteProduct']);

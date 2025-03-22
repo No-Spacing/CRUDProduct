@@ -20,7 +20,7 @@
             <v-list density="compact" nav>
                 <v-list-item href="/dashboard" prepend-icon="mdi-view-dashboard" title="Dashboard"></v-list-item>
                 <v-list-item href="/products" prepend-icon="mdi-alpha-p-box" title="Products"></v-list-item>
-                <v-list-item href="/create-product" prepend-icon="mdi-plus-box" title="Create Products"></v-list-item>
+                <v-list-item href="/create" prepend-icon="mdi-plus-box" title="Create"></v-list-item>
             </v-list>
 
             <template v-slot:append>
