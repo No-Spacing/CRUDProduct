@@ -1,5 +1,16 @@
-# app
- CRUD Product
+# CRUD Web
+ * Vuetifyjs
+ * Laravel
+ * Mysql
+ * VueJS
+ * InertiaJS
+ * Apexcharts
+## Details
+ * AUTH Admin
+ * V-Stepper with backend validations
+ * Search and Category Filter
+ * Apex charts and graphs inside the dashboard page
+ * Mysql database relation.
 ## Installation
  1. open command prompt inside the app project folder and type command `composer update`.
  2. rename the `.env.example` file to `.env`.
