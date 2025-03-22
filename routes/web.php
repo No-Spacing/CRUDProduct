@@ -29,10 +29,6 @@ Route::middleware(['admin'])->group(function () {
 
     Route::put('/update-product', [AdminController::class, 'UpdateProduct']);
 
-    Route::inertia('/videos', 'Videos');
-
-    Route::get('/videos/{id}', [AdminController::class, 'VideoPlayer']);
-
     Route::get('/logout', [AdminController::class, 'logout']); 
 });
 

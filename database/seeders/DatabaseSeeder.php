@@ -27,12 +27,5 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        DB::table('video_tables')->insert([
-            'video_url' => '/assets/VideoFiles/Sunflower.mp4'
-        ]);
-        DB::table('video_tables')->insert([
-            'video_url' => '/assets/VideoFiles/Chemical.mp4'
-        ]);
-
     }
 }
